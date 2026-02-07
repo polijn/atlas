@@ -16,6 +16,7 @@
 	import ImageOverlay from '$lib/components/ImageOverlay.svelte';
 	import AddImagesButton from '$lib/components/AddImagesButton.svelte';
 	import { MAIN_COLLECTION } from '$lib/atproto/settings';
+	import { launchConfetti } from '@foxui/visual';
 
 	let images = $state<StoredImage[]>([]);
 	let currentIndex = $state(0);
@@ -24,6 +25,12 @@
 	let uploadsDone = $state(0);
 	let uploadsTotal = $state(0);
 	let uploading = $derived(uploadsTotal > 0 && uploadsDone < uploadsTotal);
+
+	$effect(() => {
+		if (done && uploadsTotal > 0 && uploadsDone === uploadsTotal) {
+			launchConfetti();
+		}
+	});
 
 	let current = $derived(images[currentIndex]);
 	let total = $derived(images.length);
