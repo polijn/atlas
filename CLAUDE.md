@@ -31,7 +31,7 @@ No test framework is configured.
 ### Data Flow
 
 1. **Image upload** (`+page.svelte`): User selects images → GPS extracted from EXIF (`$lib/image/exif.ts`) → stored in IndexedDB (`$lib/state/image-store.svelte.ts`)
-2. **Location assignment** (`/set-location`): User picks a POI via text search (Nominatim), nearby search (Overpass API + browser geolocation), or map click (`MapPicker.svelte`) → POI assigned to image
+2. **Location assignment** (`/upload`): User picks a POI via text search (Nominatim), nearby search (Overpass API + browser geolocation), or map click (`MapPicker.svelte`) → POI assigned to image
 3. **AT Protocol upload**: Image compressed to WebP (`$lib/atproto/image-helper.ts`) → blob uploaded → record created as `pics.atmo.atlas.v0` collection
 4. **Map view** (`/map`): Fetches user's records via `listRecords`, displays geotagged images as markers
 
