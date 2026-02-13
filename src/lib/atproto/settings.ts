@@ -3,6 +3,7 @@ import { dev } from '$app/environment';
 export const SITE = 'https://atlas.atmo.pics';
 
 export const MAIN_COLLECTION = dev ? 'pics.atmo.atlas.dev' : 'pics.atmo.atlas.v0';
+export const VOTE_COLLECTION = dev ? 'votes.atmo.atlas.dev' : 'votes.atmo.atlas.v0';
 
 type Permissions = {
 	collections: readonly string[];
@@ -15,7 +16,7 @@ export const permissions = {
 
 	// example: only allow create and delete
 	// collections: ['xyz.statusphere.status?action=create&action=update'],
-	collections: [MAIN_COLLECTION],
+	collections: [MAIN_COLLECTION, VOTE_COLLECTION],
 
 	// what types of authenticated proxied requests you can make to services
 

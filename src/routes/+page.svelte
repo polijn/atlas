@@ -18,15 +18,23 @@
 
 		{#if user.isLoggedIn}
 			<AddImagesButton class="my-10 px-12 py-5 text-lg font-bold">Upload images</AddImagesButton>
-			{#if user.profile}
+			<div class="flex flex-wrap gap-3">
+				{#if user.profile}
+					<a
+						type="button"
+						class="bg-base-300 hover:bg-base-200 dark:bg-base-800 dark:hover:bg-base-700 cursor-pointer rounded-full px-4 py-3 text-sm font-semibold text-black shadow-lg transition-all active:scale-95 dark:text-white"
+						href="/map/{user.profile.handle}"
+					>
+						See your uploaded images
+					</a>
+				{/if}
 				<a
-					type="button"
 					class="bg-base-300 hover:bg-base-200 dark:bg-base-800 dark:hover:bg-base-700 cursor-pointer rounded-full px-4 py-3 text-sm font-semibold text-black shadow-lg transition-all active:scale-95 dark:text-white"
-					href="/map/{user.profile.handle}"
+					href="/vote"
 				>
-					See your uploaded images
+					Vote on POIs
 				</a>
-			{/if}
+			</div>
 		{:else if !user.isInitializing}
 			<button
 				type="button"

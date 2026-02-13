@@ -44,7 +44,7 @@
 										<img
 											{src}
 											alt=""
-											class="size-10 rounded-md border border-base-200 object-cover dark:border-base-700"
+											class="border-base-200 dark:border-base-700 size-10 rounded-md border object-cover"
 										/>
 									{/each}
 								</div>
